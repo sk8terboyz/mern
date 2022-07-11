@@ -13,14 +13,6 @@ const LoginScreen = ({ history }) => {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const userInfo = localStorage.getItem("userInfo");
-
-        if(userInfo) {
-            history.push('/mynotes');
-        }
-    }, [history])
-
     const submitHandler = async (e) => {
         e.preventDefault()
 
