@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
@@ -46,6 +46,7 @@ const LoginScreen = ({ history }) => {
             setLoading(false);
         } catch (error) {
             setError(error.response.data.message);
+            console.log(error);
             setLoading(false);
         }
     };

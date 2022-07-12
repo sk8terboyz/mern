@@ -2,9 +2,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const history = useNavigate();
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container >
@@ -21,9 +24,12 @@ const Header = () => {
                 <Nav>
                     <Nav.Link href="/mynotes">My Notes</Nav.Link>
                     <NavDropdown title="User's Name" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="">My Profile</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.2">
+                    <NavDropdown.Item onClick={()=>{
+                        localStorage.removeItem("userInfo");
+                        history("/");
+                }}>
                         Logout
                     </NavDropdown.Item>
                     </NavDropdown>
