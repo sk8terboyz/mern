@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## PROGRESS
+
+Currently this project is on hold as redux has updated since this tutorial was created, so I am focusing on learning the updated version with redux toolkit.
+
 ## MERN
 
 This directory makes use of:
